@@ -51,6 +51,18 @@ NSString *const KalDataSourceChangedNotification = @"KalDataSourceChangedNotific
   }
   return self;
 }
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        logic = [[KalLogic alloc] initForDate:[NSDate date]];
+        self.initialDate = [NSDate date];
+        self.selectedDate = [NSDate date];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(significantTimeChangeOccurred) name:UIApplicationSignificantTimeChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:KalDataSourceChangedNotification object:nil];
+    }
+    return self;
+}
 
 - (id)init
 {
