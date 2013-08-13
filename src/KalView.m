@@ -75,7 +75,7 @@ static const CGFloat kMonthLabelHeight = 17.f;
   const CGFloat kHeaderVerticalAdjust = 3.f;
   
   // Header background gradient
-  UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Kal.bundle/kal_grid_background.png"]];
+  UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Kal.bundle/kal_header_background.png"]];
   CGRect imageFrame = headerView.frame;
   imageFrame.origin = CGPointZero;
   backgroundView.frame = imageFrame;
@@ -106,7 +106,7 @@ static const CGFloat kMonthLabelHeight = 17.f;
   headerTitleLabel.font = [UIFont boldSystemFontOfSize:22.f];
   headerTitleLabel.textAlignment = UITextAlignmentCenter;
   headerTitleLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Kal.bundle/kal_header_text_fill.png"]];
-  headerTitleLabel.shadowColor = [UIColor whiteColor];
+  headerTitleLabel.shadowColor = [UIColor blackColor];
   headerTitleLabel.shadowOffset = CGSizeMake(0.f, 1.f);
   [self setHeaderTitleText:[logic selectedMonthNameAndYear]];
   [headerView addSubview:headerTitleLabel];
@@ -136,8 +136,8 @@ static const CGFloat kMonthLabelHeight = 17.f;
     weekdayLabel.backgroundColor = [UIColor clearColor];
     weekdayLabel.font = [UIFont boldSystemFontOfSize:10.f];
     weekdayLabel.textAlignment = UITextAlignmentCenter;
-    weekdayLabel.textColor = [UIColor colorWithRed:0.3f green:0.3f blue:0.3f alpha:1.f];
-    weekdayLabel.shadowColor = [UIColor whiteColor];
+    weekdayLabel.textColor = [UIColor colorWithRed:1.0f green:1.3f blue:1.3f alpha:1.f];
+    weekdayLabel.shadowColor = [UIColor blackColor];
     weekdayLabel.shadowOffset = CGSizeMake(0.f, 1.f);
     weekdayLabel.text = [weekdayNames objectAtIndex:i];
     [weekdayLabel setAccessibilityLabel:[fullWeekdayNames objectAtIndex:i]];
